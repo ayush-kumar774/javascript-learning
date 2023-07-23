@@ -1,11 +1,11 @@
 const userEmail = "aksp8134@gmail.com";
 
-if (userEmail) {
-    console.log("Got user email");
-}
-else {
-    console.log("Don't have user email");
-}
+// if (userEmail) {
+//     console.log("Got user email");
+// }
+// else {
+//     console.log("Don't have user email");
+// }
 
 // Falsy Values
 // false, 0, -0, BingInt 0n, "", null, undefined, NaN
