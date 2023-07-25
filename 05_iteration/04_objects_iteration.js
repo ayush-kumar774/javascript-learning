@@ -1,4 +1,4 @@
-// for in
+//-------------------- for in --------------
 const programmingLanguages = {
     js    : "JavaScript",
     cpp   : 'C++',
@@ -14,6 +14,8 @@ for (const key in programmingLanguages) {
     console.log(`${key} shortcut is for ${programmingLanguages[key]}`);
 }
 
+
+// -------------------- for of --------------
 
 const myObject = {
     name : "Aayush",
