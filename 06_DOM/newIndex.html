@@ -7,6 +7,7 @@
 </head>
 <body style="background-color: #212121; color: #fff;">
     <div class="parent">
+        <!-- this is comment -->
         <div class="day">Monday</div>
         <div class="day">Tuesday</div>
         <div class="day">Wednusday</div>
@@ -28,13 +29,16 @@
     // }
 
     parent.children[1].style.color = "orange";
-    console.log(parent.firstElementChild); // It will return the first element
-    console.log(parent.lastElementChild); // It will return the last element
+    // console.log(parent.firstElementChild); // It will return the first element
+    // console.log(parent.lastElementChild); // It will return the last element
 
     const dayOne = document.querySelector('.day');
-    console.log(dayOne);
-    console.log(dayOne.parentElement); // It will return the parent element 
-    console.log(dayOne.nextElementSibling); // It will print next element
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement); // It will return the parent element 
+    // console.log(dayOne.nextElementSibling); // It will print next element
+
+    console.log("NODES : " , parent.childNodes);
+
 </script>
 
 </html>
