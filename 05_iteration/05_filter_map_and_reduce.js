@@ -16,6 +16,16 @@
 // });
 // console.log(newNums);
 
+const arr = [0, 10, 20 , 30];
+const fn = function greaterThan10(n) {
+    return (n > 10);
+}
+var filter = function (arr, fn) {
+    return arr.filter(fn);
+}
+const ans = filter(arr, fn);
+console.log(ans);
+
 const books = [
     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
     { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
@@ -28,8 +38,8 @@ const books = [
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 }
 ];
 
-let userBooks = books.filter( (bk) => (bk.genre === 'History'));
-userBooks = books.filter( (book) => (book.publish > 2006) );
+let userBooks = books.filter((bk) => (bk.genre === 'History'));
+userBooks = books.filter((book) => (book.publish > 2006));
 // console.table(userBooks);
 
 
@@ -49,10 +59,17 @@ userBooks = books.filter( (book) => (book.publish > 2006) );
 // // console.log(myNums);
 // console.log(newNums);
 
+// const arr = [1, 2, 3];
+// const fn = function plusI(n, i) { return n + i; }
+// var map = function (arr, fn) {
+//     return arr.map((element, index) => fn(element, index));
+// }
+// const result = map(arr, fn);
+// console.log(result);
 
 ///////////////////////// REDUCE ///////////////////
 
-const arr = [1, 2, 3];
+// const arr = [1, 2, 3];
 
 // const myTotal = arr.reduce( function (accumulator, currentValue) {
 //     console.log(`accumulator : ${accumulator} and current value : ${currentValue}`);
@@ -61,27 +78,38 @@ const arr = [1, 2, 3];
 // console.log(myTotal);
 
 
+// const nums = [1, 2, 3, 4];
+// const fn = function sum(accum, curr) { return accum + curr; }
+// var reduce = function (nums, fn, init) {
+//     return nums.reduce(fn, init);
+// }
+// const init = 0 ;
+// const result = reduce(nums, fn, init);
+// console.log(result); 
+
+
+
 // const total = arr.reduce( (acc, curr) => acc + curr, 0);
 // console.log(total);
 
 const shoppingCart = [
     {
-        itemName : "JavaScript Course",
+        itemName: "JavaScript Course",
         price: 2999
     },
     {
-        itemName : "React Course",
+        itemName: "React Course",
         price: 3999
     },
     {
-        itemName : "Three JS Course",
+        itemName: "Three JS Course",
         price: 4999
     },
     {
-        itemName : "MERN Course",
+        itemName: "MERN Course",
         price: 29999
     }
 ]
 
-const shoppingCartBillingAmount = shoppingCart.reduce( (acc, curr) => acc + curr.price , 0);
-console.log(`Total amount = ${shoppingCartBillingAmount}`);
+// const shoppingCartBillingAmount = shoppingCart.reduce( (acc, curr) => acc + curr.price , 0);
+// console.log(`Total amount = ${shoppingCartBillingAmount}`);
