@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove elements in DOM</title>
+</head>
+
+<body style="background-color: black; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+    //////////////////// ADD //////////////////
+    function addLanguage (langName) {
+        const li = document.createElement('li');
+        li.innerHTML =`${langName}`;
+        document.querySelector('.language')
+        .appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage("TypeScript")
+    function addLanguageOptimal (langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguageOptimal('Go Lang');
+
+    ///////////////////// EDIT ///////////////////
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "Mojo";
+    const newLi = document.createElement('li');
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi);
+
+    // Edit
+    // const tempLang = document.querySelector("li:nth-child(1)");
+
+    const tempLang = document.querySelector("li:first-child");
+    // tempLang.innerHTML = "Ruby";
+    // const tempLi = document.createElement('li');
+    // tempLi.textContent = "Ruby";
+    // tempLang.replaceWith(tempLi);
+
+    tempLang.outerHTML = '<li>Ruby</li>';
+
+    /////////////////// REMOVE ///////////////////
+
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+
+</script>
+
+</html>
