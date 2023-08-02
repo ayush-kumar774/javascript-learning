@@ -90,7 +90,7 @@ form.addEventListener('submit', (event) => {
     const height = parseFloat(heightValue);
     const weight = parseFloat(weightValue);
 
-    const bmiCalculated = ((weight / height / height) * 10000).toFixed(2);
+    let bmiCalculated = ((weight / height / height) * 10000).toFixed(2);
     console.log(bmiCalculated);
 
     const bmiRange = '';
