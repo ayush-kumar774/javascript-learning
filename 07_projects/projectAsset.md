@@ -93,8 +93,18 @@ form.addEventListener('submit', (event) => {
     const bmiCalculated = ((weight / height / height) * 10000).toFixed(2);
     console.log(bmiCalculated);
 
-    results.innerHTML = `Your BMI is ${bmiCalculated}<br>
-    Please refer to the BMI Weight Guide given below.`;
+    const bmiRange = '';
+    if (bmiCalculated < 18.6) {
+        bmiRange = 'Under Weight';
+    }
+    else if (bmiCalculated >= 18.6 && bmiCalculated <= 24.9) {
+        bmiRange = 'Normal Range' ;
+    }
+    else {
+        bmiRange = 'OverWeight';
+    }
+    results.innerHTML = `<span>Your BMI is ${bmiCalculated}</span><br>
+    <span>You are ${bmiRange}.</span>`;
 });
 
 ```
