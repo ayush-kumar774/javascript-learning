@@ -4,6 +4,7 @@ const form = document.querySelector('form');
 // this usecase will give you empty height
 // const height = parseFloat(document.querySelector('#height').value);
 
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -35,7 +36,16 @@ form.addEventListener('submit', (event) => {
     const bmiCalculated = ((weight / height / height) * 10000).toFixed(2);
     console.log(bmiCalculated);
 
-    results.innerHTML = `Your BMI is ${bmiCalculated}<br>
-    Please refer to the BMI Weight Guide given below.`;
+    let bmiRange = '';
+    if (bmiCalculated < 18.6) {
+        bmiRange = 'Under Weight';
+    }
+    else if (bmiCalculated >= 18.6 && bmiCalculated <= 24.9) {
+        bmiRange = 'Normal Range' ;
+    }
+    else {
+        bmiRange = 'OverWeight';
+    }
+    results.innerHTML = `<span>Your BMI is ${bmiCalculated}</span><br>
+    <span>You are ${bmiRange}.</span>`;
 });
-
