@@ -51,3 +51,27 @@ buttons.forEach( (button) => {
     )
 } )
 ```
+
+
+## Project 2
+```javascript
+const form = document.querySelector('form');
+
+// console.log(form);
+// this usecase will give you empty height
+// const height = parseFloat(document.querySelector('#height').value);
+
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const height = parseFloat(document.querySelector('#height').value);
+    const weight = parseFloat(document.querySelector('#weight').value);
+    const bmiCalculated = ((weight / height / height) * 10000).toFixed(2) ;
+    console.log(bmiCalculated);
+
+    document.querySelector('#results').innerText =  `Your BMI is ${bmiCalculated}\n
+    Please refer to the BMI Weight Guide given below.`;
+
+}) 
+```
