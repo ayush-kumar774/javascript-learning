@@ -19,8 +19,9 @@ buttons.forEach( (button) => {
             // console.log(event);
             // console.log(event.target);
 
-            // Optimal approach since we know that each button is having an id which is representing a color, so we can directly assign the color to the background of the body.
-            
+            // Optimal approach since we know that each button is having an id 
+            // which is representing a color, so we can directly assign the color to the background of the body.
+
             const colorID = event.target.id;
             body.style.backgroundColor = colorID;
 
