@@ -1,7 +1,7 @@
 # Projects related to DOM
 
 ## Project link
-[Click Here](https://github.com/ayush-kumar774/javascript-learning)
+[Click Here](https://github.com/ayush-kumar774/javascript-learning/tree/main/07_projects)
 
 # Solution code
 
