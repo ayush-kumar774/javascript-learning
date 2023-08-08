@@ -11,8 +11,21 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    setInterval( function() {
-        console.log("Aayush", Date.now())
-    }, 1000 );
+    const sayMyName =  function(str) {
+        console.log(str, Date.now());
+    };
+
+    // const intervalID = setInterval(sayMyName, 1000);
+
+    let intervalID;
+
+    document.querySelector('#start').addEventListener('click', function(event) {
+        intervalID = setInterval(sayMyName, 1000, "JavaScript");
+    })
+    document.querySelector('#stop').addEventListener('click',function(event) {
+        clearInterval(intervalID);
+        console.log("Stopped calling myname function");
+    });
+
 </script>
 </html>
