@@ -1,26 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .card {
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  </style>
 </head>
+
 <body style="background-color: #212121;">
-    
+  <div class="card">
+    <div id="imageContainer">
+      <!-- The image will be added here -->
+    </div>
+    <p id="followers">Followers: </p>
+  </div>
 </body>
 
 <script>
-    const requestUrl = "https://api.github.com/users/ayush-kumar774" ;
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestUrl);
-    xhr.onreadystatechange = function () {
-        console.log(xhr.readyState);
-        if (xhr.readyState === 4) {
-            const data = JSON.parse(this.responseText);
-            console.log(typeof data);
-            console.log(data.followers);
-        }
+  let imageURL;
+  let followers;
+  const requestUrl = "https://api.github.com/users/ayush-kumar774";
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', requestUrl);
+  xhr.onreadystatechange = function () {
+    console.log(xhr.readyState);
+    if (xhr.readyState === 4) {
+      // this.responseText ; // this will be in string format
+      const data = JSON.parse(this.responseText);
+      console.log(data);
+      imageURL = (data.avatar_url);
+      followers = data.followers;
+      displayCard();
     }
-    xhr.send();
+  }
+  xhr.send();
+  // console.log(imageURL) ; // it won't work
+
+  function displayCard() {
+    const imageContainer = document.getElementById('imageContainer');
+    const followersText = document.getElementById('followers');
+
+    const image = document.createElement('img');
+    image.src = imageURL;
+    image.alt = "Github profile photo";
+
+    imageContainer.innerHTML = ''; // Clear the container
+    imageContainer.appendChild(image);
+
+    followersText.textContent = `Followers: ${followers}`;
+  }
+
+
 </script>
+
 </html>
