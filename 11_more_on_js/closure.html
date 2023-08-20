@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+      <style>
+            body {
+                  background-color: black;
+                  color: white;
+                  text-align: center;
+            
+            }
+            #orange {
+                  align-items: center;
+                  background-color: orange;
+                  border-color: white;
+            }
+            #green {
+                  align-items: center;
+                  background-color: green;
+                  border-color: white;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>Closure in JS</h1>
+      <button id="orange">Orange</button>
+      <br><br>
+      <button id="green">Green</button>
+</body>
+
+<script>
+      // function outer () {
+      //       let username = "aayushishere";
+      //       function inner () {
+      //             console.log(username); // aayushishere
+      //       }
+      //       function innerTwo() {
+      //             console.log(`Username is ${username}`);
+      //       }
+      //       inner();
+      //       innerTwo();
+      // }
+      // outer();
+
+      // function makeFunc() {
+      //       const name = "Aayush";
+      //       function displayName() {
+      //             console.log(name);
+      //       }
+      //       return displayName;
+      // }
+
+      // const myFunc = makeFunc();
+      // myFunc();
+
+      // document.getElementById('orange').addEventListener('click',  () => {
+      //       document.body.style.backgroundColor = 'orange';
+      //       console.log('Orange button clicked');
+      // })
+
+      // document.getElementById('green').addEventListener('click',  () => {
+      //       document.body.style.backgroundColor = 'green';
+      //       console.log('Green button clicked');
+      // })
+
+      function clickHandler(color) {
+            return () => {
+                  document.body.style.backgroundColor = `${color}`;
+                  console.log(`${color} is selected`);
+            }
+      }
+
+      document.getElementById('orange').onclick = clickHandler('orange');
+      document.getElementById('green').onclick = clickHandler('green');
+
+</script>
+
+</html>
